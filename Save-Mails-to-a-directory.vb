@@ -1,5 +1,5 @@
 Const Directory As String = "your destination directory"
-Sub SaveMail()
+Sub SaveMailToDirectory()
     Dim SelectedMsg As Outlook.Selection: Set SelectedMsg = Application.ActiveExplorer.Selection
     Dim elt As Long
     If SelectedMsg.Count > 0 Then
