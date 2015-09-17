@@ -4,7 +4,8 @@ Sub SaveMail()
     If SelectedMsg.Count > 0 Then
         Dim Message As MailItem
         For Each Message In SelectedMsg
-            Message.SaveAs Directory & Message.ConversationTopic & ".msg", OlSaveAsType.olMSG
-        Next Message
+            If Message.Class = olMail Then Message.SaveAs Directory & Message.ConversationTopic & ".msg", OlSaveAsType.olMSG
+        Next Message: Set Message = Nothing
     End If
+    Set SelectedMsg = Nothing
 End Sub
