@@ -1,10 +1,10 @@
 Const Directory As String = "your destination directory"
-Sub SaveMailToDirectory()
+Sub SaveMail()
     Dim SelectedMsg As Outlook.Selection: Set SelectedMsg = Application.ActiveExplorer.Selection
-    Dim elt As Long
     If SelectedMsg.Count > 0 Then
-        For elt = 1 To SelectedMsg.Count Step 1
-            Trash = SelectedMsg(elt).SaveAs(Directory & SelectedMsg(elt).ConversationTopic & ".msg", OlSaveAsType.olMSG)
-        Next elt
+        Dim Message As MailItem
+        For Each Message In SelectedMsg.MailItem
+            Trash = Message.SaveAs(Directory & SelectedMsg(elt).ConversationTopic & ".msg", OlSaveAsType.olMSG)
+        Next Message
     End If
 End Sub
