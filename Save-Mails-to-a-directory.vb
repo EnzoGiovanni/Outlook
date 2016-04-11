@@ -1,4 +1,4 @@
-Const Directory As String = "your destination directory"
+Const Directory As String = "your destination directory" /* do not forgett the last charactere "\"
 
 Sub SaveMail()
     Dim SelectedMsg As Outlook.Selection: Set SelectedMsg = Application.ActiveExplorer.Selection
